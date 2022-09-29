@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Wish } from './models/wish';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,8 @@ import { Wish } from './models/wish';
 })
 export class AppComponent {
   
-  wishes:Wish[]=[];
+  today = Date.now();
+  
   
 
 }
