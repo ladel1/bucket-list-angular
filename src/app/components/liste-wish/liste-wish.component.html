@@ -1,0 +1,20 @@
+<div class="col-6 offset-3">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Description</th>
+                <th>Date de création</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let wish of wishes" >
+                <td>{{wish.getTitle()}}</td>
+                <td>{{wish.getAuthor()}}</td>
+                <td>{{wish.getDescription()}}</td>
+                <td>{{wish.getDateCreated()|date:"dd-MM-yyyy HH:mm"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

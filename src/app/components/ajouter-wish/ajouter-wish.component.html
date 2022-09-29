@@ -1,0 +1,32 @@
+<div class="col-6 offset-3">
+    <div class="row text-center">
+        <h3>Ajouter un souhaite</h3>
+    </div>
+    <form [formGroup]="wishForm" (submit)="addWish()" >
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" formControlName="title" [ngClass]="{
+                'form-control':true,
+                'is-invalid':fieldValidator.isValid('title',wishForm)
+            }" id="title" >
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea [ngClass]="{
+                'form-control':true,
+                'is-invalid':fieldValidator.isValid('description',wishForm)
+            }" formControlName="description" id="description" rows="3"></textarea>
+        </div>   
+        <div class="mb-3">
+            <label for="author" class="form-label">Auteur</label>
+            <input type="text" [ngClass]="{
+                'form-control':true,
+                'is-invalid':fieldValidator.isValid('author',wishForm)
+            }" formControlName="author" id="author" >
+        </div>
+        <button class="btn btn-primary" type="submit" >Ajouter</button>    
+        <div *ngIf="isTrouble('title')||isTrouble('description')||isTrouble('author')" class="alert alert-danger mt-5">
+            {{error}}
+        </div>         
+    </form>
+</div>
